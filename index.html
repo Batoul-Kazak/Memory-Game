@@ -1,0 +1,47 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Memory Card Game</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="main.js" defer></script>
+    </head>
+    <body>
+
+        <section id="game-level">
+            <h1>Memory Game</h1>
+            <button id="very-easy">Very Easy</button>
+            <button id="easy">Easy</button>
+            <button id="medium">Medium</button>
+            <button id="hard">Hard</button>
+            <button id="very-hard">Very Hard</button>
+            <button id="expert">Expert</button>
+        </section>
+
+        <main id="game" class="hidden">
+            <h2 id="level"></h2>
+            <main id="grid">
+                <section id="score-container">
+                    <h3 id="hearts">Hearts: 💙 💙 💙</h3>
+                    <h3 id="scores">Scores: 0</h3>
+                    <h3 id="hints">Hints: 💎 💎 </h3>
+                    <h3 id="timer"></h3>
+                </section>
+                <section>
+                    <div id="items-container"></div>
+                </section>
+            </main>
+            <button id="main-menu-button">🐾 Go to Main Menu 🐾</button>
+        </main>
+
+        <div id="question-window" class="hidden">
+            <p>If you return to the main menu, you will exit the current game.
+                Do you want to continue?</p>
+
+            <div>
+                <button id="cancel">Cancel</button>
+                <button id="exit">Exit</button>
+            </div>
+        </div>
+    </body>
+</html>

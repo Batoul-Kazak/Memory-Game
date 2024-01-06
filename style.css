@@ -1,0 +1,191 @@
+:root {
+    --items-columns: 10;
+    --item-size: 0.5em;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    place-items: center;
+
+    background-color: rgb(163, 13, 43);
+    /* overflow: hidden; */
+}
+
+#game,
+#game-level {
+    /* width: 600px; */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    place-items: center;
+    gap: 5px;
+    padding: 2rem;
+    background-color: rgb(255, 123, 149);
+    border-radius: 1rem;
+}
+
+#game-level h1 {
+    color: #FFF;
+    font-size: 2rem;
+}
+
+#items-container {
+    display: grid;
+    grid-template-columns: repeat(var(--items-columns), 1fr) !important;
+    place-content: center;
+    place-items: center;
+    font-size: var(--item-size) !important;
+    padding: 1rem 2rem;
+}
+
+#game-level button {
+    width: 400px;
+    height: 60px;
+    position: relative;
+    background-image: linear-gradient(30deg, #BBB, #FFF);
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#game-level button:hover {
+    background-image: linear-gradient(35deg, rgb(68, 133, 145), rgb(93, 198, 230));
+    color: #FFF;
+}
+
+h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: -0.5rem;
+}
+
+#grid {
+    display: flex;
+    place-content: center;
+    place-items: center;
+}
+
+#main-menu-button {
+    width: 80%;
+    padding: 1rem;
+    background-color: #FFF;
+    color: crimson;
+    border-radius: 1rem;
+    font-weight: bold;
+    cursor: pointers;
+}
+
+#cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    transform-style: preserve-3d;
+    /* perspective: 500px; */
+    display: flex;
+    place-content: center;
+    place-items: center;
+}
+
+.item {
+    /* width: 50px;
+    height: 50px; */
+    position: relative;
+    padding: 0.5rem;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    border: 2px solid black;
+    background-color: #FFF;
+
+    transform: rotateY(180deg);
+    /* background-color: rgb(6, 109, 134); */
+}
+
+.item.opened-box {
+    transform: rotateY(0deg);
+}
+
+.item::after {
+    content: '';
+
+    position: absolute;
+    inset: 0;
+    opacity: 1;
+    transform: rotateY(0deg);
+    background-color: crimson;
+    transition: 2.5s;
+    backface-visibility: hidden;
+    z-index: 2;
+}
+
+.opened-box:after,
+.box-match:after {
+    transform: rotateY(180deg);
+}
+
+.hidden {
+    display: none !important;
+}
+
+#score-container {
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+
+    /* padding: 2rem; */
+    /* background-color: blue; */
+}
+
+#question-window {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    place-items: center;
+    gap: 1rem;
+
+    background-color: rgb(52, 98, 119);
+    color: #FFF;
+    font-size: 1.2rem;
+    z-index: 1;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+#question-window div {
+    display: flex;
+    place-content: center;
+    place-items: center;
+    gap: 2rem;
+    place-self: end;
+}
+
+#question-window button {
+    background-color: aquamarine;
+    color: crimson;
+    font-weight: bold;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+
+#question-window button:hover,
+#main-menu-button:hover {
+    background-color: orangered;
+    color: #FFF;
+}
+
+@media only screen and (max-width: 600px) {
+    #grid {
+        flex-direction: column;
+    }
+}
